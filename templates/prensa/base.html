@@ -1,0 +1,260 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>el20.mx</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/prensa.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bsnav.min.css' %}">
+</head>
+<body>
+<!-- Modal Registro -->
+<div class="modal fade" id="registro-modal" tabindex="-1" role="dialog" aria-labelledby="Registro" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registro-title">Crear una cuenta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Recibirás una prueba de 30 días al finalizar tu registro</p>
+                <form method="POST">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="registro-email" aria-describedby="e-mail"
+                               placeholder="Correo electrónico">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Crear cuenta</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bsnav shadow">
+    <a class="navbar-brand" href="base.html"><img src="{% static 'img/logoel20.jpg' %}" height="48px"></a>
+    <button class="navbar-toggler toggler-spring"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-sm-end">
+        <ul class="navbar-nav navbar-mobile mr-0 align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">BENEFICIOS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">CARATERISTICAS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">PLANES</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">CONTACTO</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">INICIO SESION</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#registro-modal">REGISTRO</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="bsnav-mobile">
+    <div class="bsnav-mobile-overlay"></div>
+    <nav class="navbar"></nav>
+</div>
+<!---------------------START DINAMICALLY-------------------------->
+{% block content %}
+{% endblock %}
+<!---------------------END DINAMICALLY-------------------------->
+<!-- Footer -->
+<footer class="page-footer pt-0">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="row hrRellena">
+                <div class="col-12 text-center col-md">¡CONTACTANOS AHORA!</div>
+                <div class="col">
+                    <a href="mailto:hola@el20.mx">
+                        <i class="icons-base fas fa-envelope contactanos"></i>
+                        <span class="d-none d-md-inline">hola@el20.mx</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="tel:+52-55-7586-0830">
+                        <i class="icons-base fas fa-phone phone contactanos"></i>
+                        <span class="d-none d-md-inline">(55)75860830</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <i class="icons-base fas fa-phone-volume phone-call"></i>
+                        <span class="d-none d-md-inline">¿Te llamamos?</span>
+                    </a>
+                </div>
+                <div class="col d-md-none">
+                    <i id="toggle-creditos" class="icons-base fas fa-caret-square-down contactanos"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div id="creditos" class="container-fluid text-center text-md-left d-none d-md-block mt-5">
+
+        <!-- Grid row -->
+        <div class="row" style="padding-right: 3%; padding-left:3%;">
+            <!-- Grid column -->
+            <div class="col-md-1 col-sm-6">
+                <p> el20.mx</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <small><a href="#!">Planes</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">Beneficios</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">CAD's</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">Crear una Cuenta</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">Iniciar Sesión</a></small>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-2 col-sm-6">
+                <p>Lo que debes saber</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <small><a href="#!">Terminos y condiciones</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">Aviso de Privacidad</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">Seguridad</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">FAQs</a></small>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-2 col-sm-6 ">
+                <p>Acerca de Nosotros</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <small><a href="#!">Nosotros</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">Como inicio el20.mx</a></small>
+                    </li>
+                    <li>
+                        <small><a href="#!">Prensa</a></small>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-4 col-sm-6">
+                <!-- Links -->
+                <p>Contactenos</p>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <small>Tel. (55) 7586 0830 y 31</small>
+                    </li>
+                    <li>
+                        <small>e-mail: hola@el20.mx</small>
+                    </li>
+                    <li>
+                        <small>Corporativo: <br>Carretera Mexico Toluca No. 5780 Local 32
+                            Col. Abdías García Soto, Cuajimalpa Morelos C.P 05300, CdMx.
+                        </small>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-3 order-first order-md-last">
+                <!-- Links -->
+                <p>Redes Sociales</p>
+                <div class="row">
+                    <div class="col"><a href=""> <i class=" icon-twitter fab fa-twitter"></i></a></div>
+                    <div class="col"><a href=""> <i class="icon-facebook fab fa-facebook-square"></i></a>
+                    </div>
+                    <div class="col"><a href=""> <i class="icon-in fab fa-linkedin"></i></a></div>
+                </div>
+
+
+                <p style="padding-top: 10px">Crear una cuenta</p>
+                <div class="input-group form-rounded1">
+                    <input type="text" class="form-control form-rounded1" placeholder="EMAIL">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-fill btn-info btn-round form-rounded1" value="Crear">
+                            Crear
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <hr>
+        <!-- Grid row -->
+
+        <div class="row">
+            <div class="col-md-2 col-sm-4">
+                <img id="veinte" src="{% static 'img/LOGOEL20.jpg' %}" class="img-fluid">
+            </div>
+            <div class="col-md-7 col-sm-8" style="padding-right: 10%">
+                <p>
+                    <small>Copyright 2018 Tecnología con Ingenio R20, S.A.P.I de C.V. Todos los Derechos Reservados.
+                        el20.mx y el20 son marcar registradas. Prohibida su reproducción total o parcial, sin la
+                        autorización previa, expresa y por escrito de su titular. Los términos, condiciones,
+                        características, disponibilidad, precios, tarifas, servicio y opciones de soporte están sujetos
+                        a cambios sin previo aviso.
+                    </small>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'img/fintech.png' %}" class="sponsor">
+
+                <img src="{% static 'img/Microsoft.jpg' %}" class="sponsor">
+
+                <img src="{% static 'img/Startup.png' %}" width="80px">
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer Links -->
+
+
+</footer><!-- Footer -->
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/bsnav.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $("#toggle-creditos").click(function (event) {
+            $("#creditos").toggleClass("d-none");
+        });
+    });
+</script>
+</html>
